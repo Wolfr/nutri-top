@@ -4,7 +4,7 @@
   const width = writable();
 </script>
 
-<div bind:offsetWidth={$width}>
+<div bind:offsetWidth={$width} style="height: 100%;">
   <slot decorator={Transition} scoped={{ width }} />
 </div>
 

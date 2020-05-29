@@ -54,6 +54,7 @@
   }
 </style>
 
+<div class="ct">
 <h1>{decodeURIComponent(name)}</h1>
 
 <label for="cantidad">
@@ -101,3 +102,4 @@
     {/if}
   {/await}
 {/if}
+</div>

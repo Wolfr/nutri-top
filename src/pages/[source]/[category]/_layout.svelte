@@ -12,8 +12,7 @@
   }
 </style>
 
-<a href={$url("/")}>&larr; Cambiar fuente de datos</a>
-<a href={$url("../")}>&larr; Categoria</a>
-<div bind:offsetWidth={$width}>
+<div class="bar"><a href={$url("../")}>&larr; Atras</a></div>
+<div bind:offsetWidth={$width} style="height: 100%;">
   <slot decorator={Transition} scoped={{ width }} />
 </div>

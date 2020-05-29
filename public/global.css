@@ -4,6 +4,7 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+  margin: 0;
 }
 
 :root {
@@ -43,7 +44,6 @@ body {
 	color: var(--purple);
   background-color: var(--pink);
 	margin: 0;
-	padding: 8px;
 	box-sizing: border-box;
 	font-family: "Andika", sans-serif;
 }
@@ -99,4 +99,44 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+
+.bar {
+  background-color: var(--pink);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 50px;
+  z-index: 10;
+}
+
+.bar a {
+  display: block;
+  padding: 15px;
+}
+
+.transition {
+  height: 100%;
+  width: 100%;
+}
+
+.transition main {
+  height: 100%;
+  width: 100%;
+}
+
+.transition > div:not(.bar) {
+  height: 100%;
+  width: 100%;
+}
+
+.ct {
+  height: 100%;
+  padding: 50px 15px 15px 15px;
+  box-sizing: border-box;
+}
+h1 {
+  margin-top: 0;
 }

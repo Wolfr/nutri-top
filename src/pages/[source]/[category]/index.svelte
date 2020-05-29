@@ -47,24 +47,26 @@
   }
 </style>
 
-<h1>{spanishName[category]}</h1>
+<div class="ct">
+  <h1>{spanishName[category]}</h1>
 
-<form on:submit|preventDefault={fetchItems}>
-  <label id="name">
-    Nombre:
-    <input id="name" name="name" />
-  </label>
-  <button>Buscar</button>
-</form>
+  <form on:submit|preventDefault={fetchItems}>
+    <label id="name">
+      Nombre:
+      <input id="name" name="name" />
+    </label>
+    <button>Buscar</button>
+  </form>
 
-{#if items}
-  {#await items}
-    <p>Cargando...</p>
-  {:then values}
-    {#each values as value}
-      {#if value.Alimento}
-        <a href={$url(`/${source}/${category}/${encodeURIComponent(value.Alimento)}`)}>{value.Alimento} <span>&rarr;</span></a>
-      {/if}
-    {/each}
-  {/await}
-{/if}
+  {#if items}
+    {#await items}
+      <p>Cargando...</p>
+    {:then values}
+      {#each values as value}
+        {#if value.Alimento}
+          <a href={$url(`/${source}/${category}/${encodeURIComponent(value.Alimento)}`)}>{value.Alimento} <span>&rarr;</span></a>
+        {/if}
+      {/each}
+    {/await}
+  {/if}
+</div>

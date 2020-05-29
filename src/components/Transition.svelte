@@ -1,6 +1,7 @@
 <script>
   import { scale, fly } from 'svelte/transition'
   import { BaseTransition } from "@sveltech/routify/decorators"
+  import { cubicInOut } from 'svelte/easing';
   export let scoped
   const { width } = scoped
   const configs = [
@@ -11,14 +12,14 @@
     {
       condition: c => c.toDescendant,
       transition: fly,
-      inParams: { x: $width, duration: 500 },
-      outParams: { x: -$width, duration: 500 },
+      inParams: { x: $width, duration: 250, easing: cubicInOut },
+      outParams: { x: -$width, duration: 250, easing: cubicInOut },
     },
     {
       condition: c => c.toAncestor,
       transition: fly,
-      inParams: { x: -$width, duration: 500 },
-      outParams: { x: $width, duration: 500 },
+      inParams: { x: -$width, duration: 250, easing: cubicInOut },
+      outParams: { x: $width, duration: 250, easing: cubicInOut },
     },
     {
       // No matching config. We don't want a transition
